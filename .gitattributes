@@ -1,0 +1,2 @@
+public/Assets/hero-video.mov filter=lfs diff=lfs merge=lfs -text
+public/Assets/hero-video.mp4 filter=lfs diff=lfs merge=lfs -text
