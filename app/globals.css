@@ -28,6 +28,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--gold) var(--border);
+  scrollbar-width: thin;
 }
 
 body {
@@ -40,14 +42,72 @@ body {
   font-family: var(--font-serif), Georgia, serif;
 }
 
-/* Smooth transitions for interactive elements */
 a, button {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
-/* Focus styles for accessibility */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
+}
+
+/* CTA animace – pouze hero */
+@property --cta-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cta-animate {
+  --cta-angle: 0deg;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  color: var(--gold);
+  background-color: var(--background);
+  background-image:
+    linear-gradient(var(--background), var(--background)),
+    conic-gradient(
+      from var(--cta-angle),
+      #c6a95e 0deg 50deg,
+      transparent 50deg 360deg
+    );
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  animation: cta-border-spin 5s linear infinite;
+}
+
+@keyframes cta-border-spin {
+  to { --cta-angle: 360deg; }
+}
+
+/* Skeleton */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+.skeleton {
+  background-color: var(--border);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: 0.25rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-hover);
 }

@@ -25,45 +25,18 @@ export const metadata: Metadata = {
   },
   description:
     "Tradiční pánské holičství v Olomouci – klasické i moderní střihy, holení břitvou, úprava vousů a stylingové poradenství. Schweitzerova 39.",
-  keywords: [
-    "pánské holičství",
-    "barbershop",
-    "Olomouc",
-    "holení břitvou",
-    "úprava vousů",
-    "střih vlasů",
-    "ROMEO'S BARBERSHOP",
-  ],
-  authors: [{ name: "ROMEO'S BARBERSHOP", url: "https://romeosbarber.cz" }],
-  creator: "ROMEO'S BARBERSHOP",
   openGraph: {
-    type: "website",
-    locale: "cs_CZ",
-    url: "https://romeosbarber.cz",
-    siteName: "ROMEO'S BARBERSHOP",
     title: "ROMEO'S BARBERSHOP | Pánské holičství Olomouc",
     description:
       "Tradiční pánské holičství v Olomouci – klasické i moderní střihy, holení břitvou, úprava vousů.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://romeosbarber.cz",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="cs"
-      className={`${playfair.variable} ${dmSans.variable}`}
-    >
+    <html lang="cs" className={`${playfair.variable} ${dmSans.variable}`}>
       <head>
         <LocalBusinessSchema />
       </head>
