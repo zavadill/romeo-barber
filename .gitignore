@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# velká videa (GitHub limit 100 MB) – hostujte jinde nebo zmenšete
+public/Assets/hero-video.mov
+public/Assets/hero-video.mp4
