@@ -11,7 +11,6 @@ export const NAV_LINKS = [
   { href: "/sluzby", label: "Služby" },
   { href: "/galerie", label: "Galerie" },
   { href: "/kontakt", label: "Kontakt" },
-  { href: "/rezervace", label: "Rezervace" },
 ] as const;
 
 export const OPENING_HOURS = {
