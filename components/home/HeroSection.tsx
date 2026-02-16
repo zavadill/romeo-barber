@@ -30,7 +30,7 @@ export function HeroSection() {
       </div>
       <div className={"absolute inset-0 transition-opacity duration-500 " + (useFallbackImage ? "opacity-0 pointer-events-none" : "opacity-100")}>
         <video ref={videoRef} autoPlay muted loop playsInline className="h-full w-full object-cover" aria-hidden>
-          <source src="/Assets/hero-video.mp" type="video/mp4" />
+          <source src="/Assets/hero-video.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="absolute inset-0 bg-black/60" aria-hidden />
