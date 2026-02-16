@@ -33,8 +33,18 @@ export default function KontaktPage() {
       </div>
       <section className="mt-16" aria-labelledby="map-heading">
         <h2 id="map-heading" className="font-serif text-xl font-semibold text-gold mb-4">Kde nás najdete</h2>
-        <div className="aspect-video w-full rounded-xl border border-border bg-card flex items-center justify-center text-muted" role="img" aria-label="Mapa – Schweitzerova 39, Olomouc">
-          <p className="text-center px-4">Mapa bude doplněna. Schweitzerova 39, 779 00 Olomouc.</p>
+        <div className="map-dark overflow-hidden rounded-xl border border-border bg-card">
+          <iframe
+            src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Mapa – ROMEO'S BARBERSHOP, Schweitzerova 39, Olomouc"
+            className="block w-full min-h-[300px] sm:min-h-[400px]"
+          />
         </div>
       </section>
     </article>

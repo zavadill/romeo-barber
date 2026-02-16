@@ -31,24 +31,24 @@ export function Navbar() {
       <header
         role="banner"
         className={
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out " +
-          (scrolled ? "bg-background/90 backdrop-blur-sm" : "bg-transparent")
+          "fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-[background-color,border-color] duration-300 ease-out " +
+          (scrolled ? "bg-background border-border" : "bg-transparent")
         }
       >
         <nav
           className={
-            "mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-out " +
+            "mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 transition-[height] duration-300 ease-out " +
             (scrolled ? "h-16" : "h-20")
           }
           aria-label="Hlavní navigace"
         >
-          <Link href="/" className="flex items-center transition-opacity hover:opacity-90" aria-label="Domů">
+          <Link href="/" className="flex items-center transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded" aria-label="Domů">
             <Image
               src="/Assets/logo.png"
               alt="ROMEO'S BARBERSHOP"
               width={150}
               height={60}
-              className={"w-auto object-contain transition-all duration-300 ease-out " + (scrolled ? "h-9" : "h-12")}
+              className={"w-auto object-contain transition-[height] duration-300 ease-out " + (scrolled ? "h-9" : "h-12")}
               priority
             />
           </Link>
@@ -98,7 +98,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={
-          "fixed inset-0 z-40 md:hidden bg-background transition-opacity duration-300 " +
+          "fixed inset-0 z-40 md:hidden glass transition-[opacity] duration-300 " +
           (mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none")
         }
         aria-hidden={!mobileOpen}

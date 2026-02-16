@@ -37,6 +37,42 @@ export const GIFT_VOUCHERS = {
 
 export const TEAM = ["Alfredo", "Jarda", "Kuba"] as const;
 
+export type TeamMember = {
+  id: string;
+  name: string;
+  specialization: string;
+  description: string;
+  /** Optional image path (e.g. /team/alfredo.jpg). Placeholder if missing. */
+  image?: string;
+};
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  { id: "1", name: "Alfredo", specialization: "Klasické střihy a holení břitvou", description: "Více než deset let zkušeností s tradičním řemeslem. Specializuje se na precizní střihy a holení s břitvou.", image: undefined },
+  { id: "2", name: "Jarda", specialization: "Moderní střihy a barvení", description: "Drží krok s trendy a rád poradí se stylem. Barvení, degradé a styling pro každý typ vlasů.", image: undefined },
+  { id: "3", name: "Kuba", specialization: "Full servis a úprava vousů", description: "Kompletní péče od střihu po holení. Individuální přístup a příjemná atmosféra.", image: undefined },
+];
+
+export const VALUE_BULLETS = [
+  "Preciznost v každém detailu",
+  "Tradiční techniky i moderní trendy",
+  "Individuální přístup",
+  "Pánská atmosféra bez kompromisů",
+] as const;
+
+export type GoogleReview = {
+  author: string;
+  rating: number;
+  text: string;
+  date: string;
+};
+
+/** Recenze z Google – lze později nahradit API nebo embedem */
+export const GOOGLE_REVIEWS: GoogleReview[] = [
+  { author: "Martin K.", rating: 5, text: "Nejlepší barber v Olomouci. Kuba mě vždy ostříhá přesně jak chci, příjemná atmosféra a kafe. Doporučuji.", date: "před 2 týdny" },
+  { author: "Jakub V.", rating: 5, text: "Skvělý full servis, holení břitvou jako z filmu. Profesionální přístup, určitě se vrátím.", date: "před 1 měsícem" },
+  { author: "Tomáš P.", rating: 5, text: "Konečně holičství, kde rozumí pánským střihům. Individuální přístup a tradiční řemeslo. 10/10.", date: "před 2 měsíci" },
+];
+
 export const CASH_ONLY_NOTICE =
   "Platba je možná pouze v hotovosti." as const;
 
