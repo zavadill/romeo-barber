@@ -33,7 +33,7 @@ export function BookingForm() {
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label htmlFor="booking-service" className="mb-2 block text-sm font-medium text-muted">Služba</label>
-              <select id="booking-service" value={service} onChange={(e) => setService(e.target.value)} className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
+              <select id="booking-service" value={service} onChange={(e) => setService(e.target.value)} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
                 <option value="">Vyberte službu</option>
                 {BOOKING_SERVICES.map((s) => (
                   <option key={s.id} value={s.id}>{s.name} ({s.duration})</option>
@@ -42,7 +42,7 @@ export function BookingForm() {
             </div>
             <div>
               <label htmlFor="booking-staff" className="mb-2 block text-sm font-medium text-muted">Zaměstnanec</label>
-              <select id="booking-staff" value={staff} onChange={(e) => setStaff(e.target.value)} className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
+              <select id="booking-staff" value={staff} onChange={(e) => setStaff(e.target.value)} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
                 {BOOKING_STAFF.map((s) => (
                   <option key={s.id} value={s.id}>{s.name}</option>
                 ))}
@@ -63,11 +63,11 @@ export function BookingForm() {
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label htmlFor="booking-date" className="mb-2 block text-sm font-medium text-muted">Datum</label>
-              <input id="booking-date" type="date" min={new Date().toISOString().split("T")[0]} className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
+              <input id="booking-date" type="date" min={new Date().toISOString().split("T")[0]} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
             </div>
             <div>
               <label htmlFor="booking-time" className="mb-2 block text-sm font-medium text-muted">Čas</label>
-              <select id="booking-time" className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
+              <select id="booking-time" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
                 {["9:30", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"].map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
             </div>
@@ -85,11 +85,11 @@ export function BookingForm() {
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label htmlFor="booking-name" className="mb-2 block text-sm font-medium text-muted">Jméno</label>
-              <input id="booking-name" type="text" placeholder="Jan Novák" className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground placeholder:text-muted focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
+              <input id="booking-name" type="text" placeholder="Jan Novák" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
             </div>
             <div>
               <label htmlFor="booking-phone" className="mb-2 block text-sm font-medium text-muted">Telefon</label>
-              <input id="booking-phone" type="tel" placeholder="+420 123 456 789" className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground placeholder:text-muted focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
+              <input id="booking-phone" type="tel" placeholder="+420 123 456 789" className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
             </div>
           </div>
           <div className="flex justify-between pt-4">
@@ -102,7 +102,7 @@ export function BookingForm() {
       {step === 4 && (
         <div className="space-y-6">
           <p className="font-semibold text-foreground">Způsob platby</p>
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div className="border-l-2 border-gold/50 pl-6 py-4">
             <p className="text-muted">{CASH_ONLY_NOTICE}</p>
           </div>
           <div className="flex justify-between pt-4">
@@ -115,7 +115,7 @@ export function BookingForm() {
       {step === 5 && (
         <div className="space-y-6">
           <p className="font-semibold text-foreground">Zkontrolujte rezervaci</p>
-          <div className="rounded-xl border border-border bg-card p-6 space-y-4">
+          <div className="border-l-2 border-gold/50 pl-6 py-4 space-y-4">
             <p className="text-muted">Rezervace je připravena. Pro dokončení vás budeme kontaktovat.</p>
           </div>
           <div className="flex justify-between pt-4">

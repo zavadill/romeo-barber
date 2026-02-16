@@ -103,7 +103,7 @@ export function Navbar() {
         }
         aria-hidden={!mobileOpen}
       >
-        <div className="flex min-h-full flex-col items-center justify-center px-8 py-20">
+        <div className="bg-background flex min-h-full flex-col items-center justify-center px-8 py-20">
           <ul className="w-full max-w-xs space-y-6 text-center">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>

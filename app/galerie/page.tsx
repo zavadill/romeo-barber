@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
+const baseUrl = "https://romeosbarber.cz";
+
 export const metadata: Metadata = {
   title: "Galerie",
-  description: "Fotogalerie ROMEO'S BARBERSHOP Olomouc.",
+  description: "Fotogalerie ROMEO'S BARBERSHOP Olomouc – prostředí, střihy a atmosféra našeho pánského holičství.",
+  openGraph: { url: `${baseUrl}/galerie`, title: "Galerie | ROMEO'S BARBERSHOP Olomouc", description: "Fotogalerie – prostředí a atmosféra barbershopu v Olomouci." },
+  alternates: { canonical: `${baseUrl}/galerie` },
 };
 
 export default function GaleriePage() {
@@ -15,7 +19,7 @@ export default function GaleriePage() {
       <section className="mt-16" aria-label="Fotografie">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="aspect-[4/3] rounded-xl border border-border bg-card flex items-center justify-center text-muted text-sm">Foto připravujeme</div>
+            <div key={i} className="aspect-[4/3] rounded-lg border border-border flex items-center justify-center text-muted text-sm">Foto připravujeme</div>
           ))}
         </div>
       </section>

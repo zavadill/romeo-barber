@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { SITE, OPENING_HOURS, CASH_ONLY_NOTICE } from "@/lib/constants";
 
+const baseUrl = "https://romeosbarber.cz";
+
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: "Kontakt ROMEO'S BARBERSHOP – Schweitzerova 39, Olomouc.",
+  description: "Kontakt ROMEO'S BARBERSHOP – adresa Schweitzerova 39, Olomouc, telefon +420 723 371 784. Otevírací doba a mapa.",
+  openGraph: { url: `${baseUrl}/kontakt`, title: "Kontakt | ROMEO'S BARBERSHOP Olomouc", description: "Adresa, telefon, otevírací doba. Schweitzerova 39, Olomouc." },
+  alternates: { canonical: `${baseUrl}/kontakt` },
 };
 
 export default function KontaktPage() {
@@ -14,7 +18,7 @@ export default function KontaktPage() {
         <p className="mt-4 text-lg text-muted">Těšíme se na vaši návštěvu</p>
       </header>
       <div className="mt-16 grid gap-12 md:grid-cols-2">
-        <section className="rounded-xl border border-border bg-card p-8" aria-labelledby="address-heading">
+        <section className="border-l-2 border-gold/50 pl-8" aria-labelledby="address-heading">
           <h2 id="address-heading" className="font-serif text-xl font-semibold text-gold">Adresa</h2>
           <address className="mt-4 not-italic text-foreground">
             <p className="text-lg">{SITE.name}</p>
@@ -22,7 +26,7 @@ export default function KontaktPage() {
             <p className="mt-4"><a href={"tel:" + SITE.phoneRaw} className="text-gold transition-colors hover:text-gold-hover">{SITE.phone}</a></p>
           </address>
         </section>
-        <section className="rounded-xl border border-border bg-card p-8" aria-labelledby="hours-heading">
+        <section className="border-l-2 border-gold/50 pl-8" aria-labelledby="hours-heading">
           <h2 id="hours-heading" className="font-serif text-xl font-semibold text-gold">Otevírací doba</h2>
           <ul className="mt-4 space-y-2 text-muted">
             <li>{OPENING_HOURS.weekdays}</li>
@@ -33,7 +37,7 @@ export default function KontaktPage() {
       </div>
       <section className="mt-16" aria-labelledby="map-heading">
         <h2 id="map-heading" className="font-serif text-xl font-semibold text-gold mb-4">Kde nás najdete</h2>
-        <div className="map-dark overflow-hidden rounded-xl border border-border bg-card">
+        <div className="map-dark overflow-hidden rounded-lg border border-border">
           <iframe
             src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
             width="100%"

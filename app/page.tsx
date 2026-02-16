@@ -52,9 +52,9 @@ export default function HomePage() {
         <div className="mt-20 border-t border-border pt-20">
           <h3 className="font-serif text-2xl font-bold text-center text-foreground sm:text-3xl">Recenze z Google</h3>
           <p className="mt-2 text-center text-muted">Co o nás říkají zákazníci</p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {GOOGLE_REVIEWS.map((review) => (
-              <article key={review.author + review.date} className="rounded-xl border border-border bg-card p-6">
+              <article key={review.author + review.date} className="border-l-4 border-gold/60 pl-6 py-2">
                 <div className="flex items-center gap-1 text-gold" aria-label={`Hodnocení ${review.rating} z 5 hvězd`}>
                   {Array.from({ length: 5 }).map((_, i) => (
                     <svg key={i} className="h-5 w-5" viewBox="0 0 24 24" fill={i < review.rating ? "currentColor" : "none"} stroke="currentColor" strokeWidth={1.5} aria-hidden>
@@ -122,22 +122,18 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section id="galerie" className="border-y border-border bg-card py-20" aria-labelledby="gallery-heading">
+      <section id="galerie" className="border-y border-border py-20" aria-labelledby="gallery-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 id="gallery-heading" className="font-serif text-3xl font-bold text-center text-foreground sm:text-4xl">Galerie</h2>
           <p className="mt-4 text-center text-muted max-w-2xl mx-auto">Prostředí a atmosféra našeho barbershopu.</p>
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {GALLERY_ITEMS.map((label, i) => (
-              <div
-                key={i}
-                className="group relative aspect-square overflow-hidden rounded-xl border border-border bg-background"
-              >
+              <div key={i} className="group relative aspect-square overflow-hidden rounded-xl border border-border bg-background">
                 <div className="absolute inset-0 flex items-center justify-center text-muted text-sm">
                   Foto připravujeme
                 </div>
                 <div
-                  className="gallery-hover glass-overlay absolute inset-0 flex items-center justify-center opacity-0 transition-[opacity] duration-200 group-hover:opacity-100"
-                  style={{ transitionProperty: "opacity" }}
+                  className="gallery-hover glass-overlay absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                   aria-hidden
                 >
                   <span className="font-serif text-lg font-semibold uppercase tracking-wider text-white">
@@ -156,22 +152,22 @@ export default function HomePage() {
       <section id="kontakt" className="scroll-mt-24 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="contact-heading">
         <h2 id="contact-heading" className="font-serif text-3xl font-bold text-center text-foreground sm:text-4xl">Kontakt</h2>
         <p className="mt-4 text-center text-muted">Těšíme se na vaši návštěvu. Přijďte k nám na Schweitzerově v Olomouci.</p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+          <div className="border-l-2 border-gold/50 pl-6">
             <h3 className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Adresa</h3>
             <address className="mt-3 not-italic text-foreground">
               <p className="text-lg leading-snug">{SITE.name}</p>
               <p className="mt-2 text-muted">{SITE.address}</p>
             </address>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
+          <div className="border-l-2 border-gold/50 pl-6">
             <h3 className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Telefon</h3>
             <p className="mt-3">
               <a href={"tel:" + SITE.phoneRaw} className="text-lg font-medium text-gold transition-colors hover:text-gold-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded">{SITE.phone}</a>
             </p>
             <p className="mt-2 text-sm text-muted">Zavolejte pro rezervaci nebo dotazy.</p>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6 sm:p-8 sm:col-span-2 lg:col-span-1">
+          <div className="border-l-2 border-gold/50 pl-6 sm:col-span-2 lg:col-span-1">
             <h3 className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Otevírací doba</h3>
             <ul className="mt-3 space-y-1 text-muted" aria-label="Otevírací doba">
               <li>{OPENING_HOURS.weekdays}</li>
@@ -179,7 +175,7 @@ export default function HomePage() {
             </ul>
           </div>
         </div>
-        <div className="map-dark mt-12 overflow-hidden rounded-xl border border-border bg-card">
+        <div className="map-dark mt-12 overflow-hidden rounded-lg border border-border">
           <iframe
             src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
             width="100%"
@@ -197,7 +193,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="rezervace" className="border-t border-border bg-card py-20" aria-labelledby="cta-heading">
+      <section id="rezervace" className="border-t border-border py-20" aria-labelledby="cta-heading">
         <div className="mx-auto max-w-2xl px-4 text-center">
           <h2 id="cta-heading" className="font-serif text-3xl font-bold text-foreground sm:text-4xl">Rezervujte si termín</h2>
           <p className="mt-4 text-muted">Přijďte k nám na střih, holení nebo úpravu vousů.</p>
